@@ -5,9 +5,9 @@ if __name__ == "__main__":
     if leng == 1:
         print("0 arguments.")
     elif leng == 2:
-        print("1 argument.")
+        print("1 argument:")
     else:
-        print("{:d} arguments.".format(leng - 1))
+        print("{:d} arguments:".format(leng - 1))
     if leng > 0:
         for i in range(1, leng):
             print("{:d}: {}".format(i, argv[i]))
