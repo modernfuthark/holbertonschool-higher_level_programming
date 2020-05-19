@@ -22,7 +22,7 @@ class Square:
         if type(newsize) != int:
             raise TypeError("size must be an integer")
         if newsize < 0:
-            raise ValueError("size mustbe >= 0")
+            raise ValueError("size must be >= 0")
         self.__size = newsize
 
     def my_print(self):
