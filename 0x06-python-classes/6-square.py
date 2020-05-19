@@ -48,5 +48,6 @@ class Square:
     def position_get(self):
         """position_get: Get position"""
         return self.__position
+
     position = property(position_get, position_set)
     size = property(sizeget, sizeset)
