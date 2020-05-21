@@ -1,0 +1,19 @@
+>>> smn = __import__('3-say_my_name').say_my_name
+
+>>> smn("John", "Doe")
+My name is John Doe
+
+>>> smn("John")
+My name is John 
+
+>>> try:
+...    smn("John", 1337)
+... except Exception as e:
+...    print(e)
+last_name must be a string
+
+>>> try:
+...    smn(7, "Seven")
+... except Exception as e:
+...    print(e)
+first_name must be a string
