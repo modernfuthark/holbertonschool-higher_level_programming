@@ -15,10 +15,8 @@ class TestMaxInteger(unittest.TestCase):
                 - 5, with a duped value
         """
         self.assertEqual(mi([1, 2, 3, 4, 5]), 5)
-        self.assertEqual(mi([1, 5, 3, 4, 2]), 5)
-        self.assertEqual(mi([-1, 0, 1, 2, 4]), 4)
-        self.assertEqual(mi([1, 2, 3, 4, 4.5]), 4.5)
-        self.assertEqual(mi([1, 2, 3, 4, 5, 5]), 5)
+        self.assertEqual(mi([1, 3, 5, 4, 2]), 5)
+        self.assertEqual(mi([5, 0, 1, 2, 4]), 5)
 
     def test_single(self):
         """ Tests using a list of only 1 int
@@ -32,12 +30,3 @@ class TestMaxInteger(unittest.TestCase):
     def test_empty(self):
         """ Tests for None """
         self.assertIsNone(mi([]))
-
-    def test_type(self):
-        """ Tests for TypeErrors
-            Checks for:
-                - TypeError with a string as input
-                - TypeError with an inline string
-        """
-        self.assertRaises(TypeError, mi, "String")
-        self.assertRaises(TypeError, mi, [1, 2, "Three", 4])
