@@ -3,6 +3,6 @@
 
 
 def read_file(filename=""):
+    """ read_file: Reads a file """
     with open(filename) as f:
-        readtext = f.read())
-    print(readtext, end="")
+        print(f.read())
