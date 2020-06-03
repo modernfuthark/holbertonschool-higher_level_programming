@@ -5,4 +5,4 @@
 def read_file(filename=""):
     """ read_file: Reads a file """
     with open(filename) as f:
-        print(f.read())
+        print(f.read(), end="")
