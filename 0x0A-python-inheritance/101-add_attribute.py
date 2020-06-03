@@ -3,6 +3,7 @@
 
 
 def add_attribute(obj, name, val):
+    """ add_attribute: Adds an attribute to obj """
     if isinstance(obj, type) is False:
         raise TypeError("can't add new attribute")
     setattr(obj, name, val)
