@@ -1,0 +1,17 @@
+>>> ml = __import__('1-my_list').MyList
+>>> ml1 = ml()
+
+>>> ml1.print_sorted()
+[]
+
+>>> ml2 = ml()
+>>> ml2.append(1)
+>>> ml2.append(4)
+>>> ml2.append(2)
+>>> ml2.append(3)
+>>> ml2.append(5)
+>>> print(ml2)
+[1, 4, 2, 3, 5]
+
+>>>ml2.print_sorted()
+[1, 2, 3, 4, 5]
