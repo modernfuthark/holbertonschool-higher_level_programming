@@ -29,4 +29,4 @@ class Student:
     def reload_from_json(self, json):
         """ reload_from_json: Replace all attrs of Student """
         for key in json:
-            setattr(self, key, json[i])
+            setattr(self, key, json[key])
