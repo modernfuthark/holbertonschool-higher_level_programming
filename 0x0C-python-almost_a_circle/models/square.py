@@ -1,4 +1,4 @@
-#!usr/bin/python3
+#!/usr/bin/python3
 """ square: File for the Square class """
 from models.rectangle import Rectangle
 
