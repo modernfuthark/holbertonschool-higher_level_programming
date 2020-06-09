@@ -16,12 +16,12 @@ class Rectangle(Base):
 
     @property
     def width(self):
-        """ Getter """
+        """ width: Getter """
         return self.__width
 
     @width.setter
     def width(self, width):
-        """ Setter """
+        """ width: Setter """
         if type(width) is not int:
             raise TypeError("width must be an integer")
         if width <= 0:
@@ -30,12 +30,12 @@ class Rectangle(Base):
 
     @property
     def height(self):
-        """ Getter """
+        """ height: Getter """
         return self.__height
 
     @height.setter
     def height(self, height):
-        """ Setter """
+        """ height: Setter """
         if type(height) is not int:
             raise TypeError("height must be an integer")
         if height <= 0:
@@ -44,12 +44,12 @@ class Rectangle(Base):
 
     @property
     def x(self):
-        """ Getter """
+        """ x: Getter """
         return self.__x
 
     @x.setter
     def x(self, x):
-        """ Setter """
+        """ x: Setter """
         if type(x) is not int:
             raise TypeError("x must be an integer")
         if x < 0:
@@ -58,12 +58,12 @@ class Rectangle(Base):
 
     @property
     def y(self):
-        """ Getter """
+        """ y: Getter """
         return self.__y
 
     @y.setter
     def y(self, y):
-        """ Setter """
+        """ y: Setter """
         if type(y) is not int:
             raise TypeError("y must be an integer")
         if y < 0:
@@ -71,11 +71,11 @@ class Rectangle(Base):
         self.__y = y
 
     def area(self):
-        """ Return the area of the rectangle """
+        """ area: Return the area of the rectangle """
         return self.__width * self.__height
 
     def display(self):
-        """ Display the rectangle """
+        """ dispaly: Display the rectangle """
         print("\n" * self.__y, end="")
         for i in range(0, self.__height):
             print(" " * self.__x, end="")
@@ -83,9 +83,10 @@ class Rectangle(Base):
 
     def __str__(self):
         """ __str__: String override """
-        return "[Rectangle] ({}) {}/{} - {}/{}".format(self.id, self.__x, self.__y, self.__width, self.__height)
+        return "[Rectangle] ({}) {}/{} - {}/{}"\
+            .format(self.id, self.__x, self.__y, self.__width, self.__height)
 
-    def update(self, *args):
+    def update(self, *args, **kwargs):
         """ update: Update the rectangle """
         if len(args) is not 0:
             arglength = len(args)
@@ -99,3 +100,16 @@ class Rectangle(Base):
                 self.__x = args[3]
             if arglength >= 5:
                 self.__y = args[4]
+        else:
+            for key, val in kwargs.items():
+                setattr(self, key, val)
+
+    def to_dictionary(self):
+        """ to_dictionary: Dictionary representation """
+        todict = {}
+        todict["id"] = self.id
+        todict["width"] = self.__width
+        todict["height"] = self.__height
+        todict["x"] = self.__x
+        todict["y"] = self.__y
+        return todict
