@@ -59,10 +59,14 @@ class Base:
     def load_from_file(cls):
         """ load_from_file: Get list instances from a file """
         fn = cls.__name__ + ".json"
-        instances = []  # empty list
-        with open(fn, 'r') as f:
-            data = f.read()
+        # check if file exists
+        try:
+            with open(fn, 'r') as f:
+                data = f.read()
+        except:
+            return []  # file doesn't exist, return empty list
         jason = cls.from_json_string(data)
+        instances = []
         # Was getting an error, used for loop instead
         for i in jason:
             instances.append(cls.create(**i))
