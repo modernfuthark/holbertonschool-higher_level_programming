@@ -48,7 +48,10 @@ class Base:
     def create(cls, **dictionary):
         """ create: Create an instance from a pre-made dictionary """
         # temp values to create blank instance
-        newinstance = cls(1, 1, 0, 0)
+        if cls.__name__ is "Rectangle":
+            newinstance = cls(1, 1, 0, 0)
+        else:
+            newinstance = cls(1)
         newinstance.update(**dictionary)  # update values
         return newinstance
 
