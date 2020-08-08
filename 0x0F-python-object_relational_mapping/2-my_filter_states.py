@@ -9,6 +9,7 @@ def main():
     sql_User = argv[1]
     sql_Password = argv[2]
     sql_dbName = argv[3]
+    search = argv[4]
 
     sql_database = MySQLdb.connect(
         host="localhost",
@@ -20,12 +21,12 @@ def main():
 
     cur = sql_database.cursor()
 
-    cur.execute("SELECT id, name FROM states ORDER BY states.id ASC")
+    cur.execute("SELECT id, name FROM states \
+        WHERE states.name = '{}' ORDER BY states.id ASC".format(search))
 
     # print(cur.fetchall())
     for i in cur.fetchall():
-        if i[1] == argv[4]:
-            print(i)
+        print(i)
 
 if __name__ == "__main__":
     main()
