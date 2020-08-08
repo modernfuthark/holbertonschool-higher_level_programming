@@ -24,13 +24,13 @@ def main():
     cur = sql_database.cursor()
 
     cur.execute("SELECT id, name FROM states \
-        WHERE states.name = %(search)s ORDER BY states.id ASC",
-        {'search': search}
-        )
-        # self note: could also be written as:
-        #  cur.execute("SELECT id, name FROM states \
-        # WHERE states.name = %s ORDER BY states.id ASC",
-        # (search, ))
+        WHERE states.name = %(search)s \
+        ORDER BY states.id ASC", {'search': search})
+
+    # self note: could also be written as:
+    #  cur.execute("SELECT id, name FROM states \
+    # WHERE states.name = %s ORDER BY states.id ASC",
+    # (search, ))
 
     # print(cur.fetchall())
     for i in cur.fetchall():
