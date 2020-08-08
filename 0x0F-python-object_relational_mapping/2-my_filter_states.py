@@ -26,7 +26,8 @@ def main():
 
     # print(cur.fetchall())
     for i in cur.fetchall():
-        print(i)
+        if i[1] == search:
+            print(i)
 
 if __name__ == "__main__":
     main()
