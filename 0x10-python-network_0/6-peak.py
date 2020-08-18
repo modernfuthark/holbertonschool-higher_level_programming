@@ -17,7 +17,7 @@ def search(low, _list, high):
 
     test = ((high - low) // 2) + low
 
-    if _list[test] > _list[mid + 1]:
+    if _list[test] > _list[test + 1]:
         return search(low, _list, test)
     else:
         return search(test + 1, _list, high)
