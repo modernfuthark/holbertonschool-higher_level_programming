@@ -10,6 +10,7 @@ def find_peak(list_of_integers):
     end = search(0, list_of_integers, listlen - 1)
     return list_of_integers[end]
 
+
 def search(low, _list, high):
     """ Recursive peak search using high and low """
     if low >= high:
