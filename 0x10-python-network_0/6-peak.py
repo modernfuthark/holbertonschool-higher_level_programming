@@ -4,12 +4,20 @@
 
 def find_peak(list_of_integers):
     """ Finds the peak of a list """
-    if len(list_of_integers) is 0:
+    listlen = len(list_of_integers)
+    if listlen is 0:
         return None
-    peak = list_of_integers[0]
+    end = search(0, list_of_integers, listlen - 1)
+    return list_of_integers[end]
 
-    for i in range(1, len(list_of_integers)):
-        if list_of_integers[i - 1] < list_of_integers[i]:
-            if list_of_integers[i + 1] < list_of_integers[i]:
-                peak = list_of_integers[i]
-    return peak
+def search(low, _list, high):
+    """ Recursive peak search using high and low """
+    if low >= high:
+        return low
+
+    test = ((high - low) // 2) + low
+
+    if _list[test] > _list[mid + 1]:
+        return search(low, _list, test)
+    else:
+        return search(test + 1, _list, high)
