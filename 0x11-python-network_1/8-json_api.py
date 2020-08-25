@@ -6,7 +6,11 @@ import sys
 
 
 if __name__ == "__main__":
-    data = {'q': sys.argv[1]}
+    inp = ""
+    if sys.argv > 1:
+        inp = sys.argv[1]
+
+    data = {'q': inp}
     url = "http://0.0.0.0:5000/search_user"
 
     req = requests.post(url, data)
