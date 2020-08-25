@@ -16,9 +16,6 @@ if __name__ == "__main__":
 
     req = requests.post(url, data)
 
-    id = req.json().get("id")
-    name = req.json().get("name")
-
     try:
         req = req.json()
 
