@@ -7,7 +7,7 @@ import sys
 
 if __name__ == "__main__":
     inp = ""
-    if sys.argv > 1:
+    if len(sys.argv) > 1:
         inp = sys.argv[1]
 
     data = {'q': inp}
