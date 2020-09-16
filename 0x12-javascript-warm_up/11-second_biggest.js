@@ -9,11 +9,13 @@ if (process.argv.length < 4) {
   let i = 2;
 
   while (args[i]) {
-    if (args[i] > first) {
+    const n = parseInt(args[i]); /* Without this, 53 > 5253 */
+    if (n > first) {
       second = first;
-      first = args[i];
-    } else if (args[i] < first && args[i] > second) {
-      second = args[i];
+      first = n;
+    }
+    if (n < first && n > second) {
+      second = n;
     }
     i++;
   }
