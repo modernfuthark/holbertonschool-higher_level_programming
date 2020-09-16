@@ -4,8 +4,8 @@ if (process.argv.length < 4) {
   console.log(0);
 } else {
   const args = process.argv;
-  let first = args[3];
-  let second;
+  let first = args[2];
+  let second = args[3];
   let i = 2;
 
   while (args[i]) {
