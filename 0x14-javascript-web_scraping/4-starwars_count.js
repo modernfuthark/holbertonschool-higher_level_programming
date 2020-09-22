@@ -3,20 +3,15 @@
 const req = require('request');
 const url = process.argv[2];
 const char = 'https://swapi-api.hbtn.io/api/people/18/';
+let count = 0;
 
 req(url, (err, res, body) => {
   if (err) throw err;
 
-  let count = 0;
-  JSON.parse(body).results.forEach(function (itm, idx) {
-    /*if (itm.characters.includes(char)) {
+  for (const film of JSON.parse(body).results) {
+    if (film.characters.includes(char)) {
       count++;
-    }*/
-    itm.characters.forEach(function (itm, idx) {
-      if (itm === char) {
-        count++;
-      }
-    });
-  });
+    }
+  }
   console.log(count);
 });
