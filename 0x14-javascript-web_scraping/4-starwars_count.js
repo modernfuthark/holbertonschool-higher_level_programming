@@ -9,9 +9,14 @@ req(url, (err, res, body) => {
 
   let count = 0;
   JSON.parse(body).results.forEach(function (itm, idx) {
-    if (itm.characters.includes(char)) {
+    /*if (itm.characters.includes(char)) {
       count++;
-    }
+    }*/
+    itm.characters.forEach(function (itm, idx) {
+      if (itm === char) {
+        count++;
+      }
+    });
   });
   console.log(count);
 });
