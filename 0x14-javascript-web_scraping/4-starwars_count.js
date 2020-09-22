@@ -8,10 +8,10 @@ req(url, (err, res, body) => {
   if (err) throw err;
 
   let count = 0;
-  for (const film of JSON.parse(body).results) {
-    if (film.characters.includes(char)) {
+  JSON.parse(body).results.forEach(function (itm, idx) {
+    if (itm.characters.includes(char)) {
       count++;
     }
-  }
+  });
   console.log(count);
 });
