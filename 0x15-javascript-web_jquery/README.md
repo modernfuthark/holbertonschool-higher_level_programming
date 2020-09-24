@@ -1,4 +1,4 @@
-**Javascript - Web jQuery**
+**Javascript - Web jQuery**\
 Tim Sninsky\
 09/24/20
 ---
